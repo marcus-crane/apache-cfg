@@ -1,6 +1,6 @@
 # Apache Configurations
 ### So you wanna run both Node applications and static files on Apache, huh?
-##### It doesn't have to just be Node really, anything works but I just happen to use that with this.
+##### It doesn't have to just be Node really. Anything works but I just happen to have used that with this.
 
 Well, I can't say this is best practice (since I have no idea what that even is, but here's how I was doing it until very recently (like, today because I'm gonna try out nginx next)
 
