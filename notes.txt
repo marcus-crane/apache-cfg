@@ -1,0 +1,75 @@
+A VirtualHost is basically what it says on the tin: A host that is virtual!
+
+Since we don't have a single host at Port 80 but multiple, I suppose that's why they call 'em virtual.
+
+This line is saying that we want to create a new VirtualHost that is triggered anytime a request is made at Port 80.
+
+    denotes the IP address (it's a wildcard so any IP address) but since this file is sitting inside the server, it will basically only resolve to be the IP address of the server.
+
+The main reason for this is that if your IP address is not static and changes, you'll have to keep changing the IP address in your log to ensure it can answer requests.
+
+--
+
+Setting the ServerAdmin name. It's a valid parameter but honestly, I have no idea where it gets used! I'd probably rather have it than not though?
+
+--
+
+Our ServerName is not the name of what we want our site to be, but the name of the URL we're listening for.
+
+If our server's IP address gets a request at Port 80 for 'mycoolsite.com', then we can say "Oh, that's us" and serve up Port 3000 (which we do below)
+
+--
+
+
+
+It would seem this line is what preserves the 'host' or URL. If it were turned off, our server wouldn't keep track of what site the request has come from.
+
+Without that, we wouldn't know when to respond to mycoolsite.com with our port 3000 server!
+
+http://httpd.apache.org/docs/current/mod/mod_proxy.html#proxypreservehost
+
+--
+
+Yup, we have what would appear to be the same line twice
+
+--
+
+
+
+We do need both of them however!
+
+The "/" denotes that we want to serve up at the root of our site eg; mycoolsite.com rather than say, nice.mycoolsite.com or mycoolsite.com/fun
+
+The second parameter "http://127.0.0.1:3000/" is only handled internally, since it's communicating with localhost and basically says serves up the port 3000 server as if it were the root of http://mycoolsite.com
+
+http://httpd.apache.org/docs/current/mod/mod_proxy.html#proxypassreverse
+
+--
+
+
+
+Logs! These come in really handy although for the most part, you hopefully won't need 'em.
+
+You can name the logs anything you want but I tend to follow the convention of sitename.log to make things easy to keep track of.
+
+This log in particular will contain any errors that occur in the site. Keep in mind though that since this is a Node application, Apache won't be able to tell you eg; error on line 15 of your Javascript since it doesn't have anything to do with serving that up.
+
+By default, on an Ubuntu server at least, ${APACHE_LOG_DIR} is a placeholder for /var/log/apache2/, just not hardcoded in case you ever decide to change its location.
+
+--
+
+
+
+This log stores access data such as requests, the IP addresses they came from, the exact date and time, the status code (eg; 200 SUCCESS or 404 NOT FOUND) and the browsers user agent.
+
+You can also sometimes see search spiders in there too. Heck, while writing this, my page was crawled by Yahoo!
+
+The standard I follow for this is sitenameaccess.log. You also should include the combined part too because ¯_(ツ)_/¯
+
+--
+
+Hopefully these explain what each line does.
+
+**To see the notes, go to the [Files Changed](https://github.com/marcus-crane/apache-cfg/pull/1/files) tab**
+
+I'll explain each unique line once and thereafter, refer back to the previous comments (if that's a feature?)
