@@ -10,6 +10,10 @@ I'll try to explain step by step what each line is doing because at first, I hav
 
 ### I just want to serve up a single static folder to Port 80
 
+Sure! You probably actually don't need a VirtualHost file at all but it's an easy enough stepping stone to show how that works actually.
+
+Check out **single-static-site.conf**
+
 ### I want to run a Node server on Port 80!
 
 Noooo, for reasons beyond my current understanding, you should never just straight up bind to Port 80. Firstly, it requires root permissions anyway. I assume just to stop people randomly binding to Port 80 and messing up other peoples stuff
@@ -17,8 +21,6 @@ Noooo, for reasons beyond my current understanding, you should never just straig
 Anyway, what you should try instead is running your application on some other port then forwarding it to Port 80.
 
 Check out **port-forward-fun.conf**
-
-Neat, check out **single-static-site.conf**
 
 ### I want to serve up multiple static files but how can I get both if there's only one Port 80?!
 
