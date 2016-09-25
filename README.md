@@ -5,6 +5,8 @@ Well, I can't say this is best practice (since I have no idea what that even is,
 
 I'll try to explain step by step what each line is doing because at first, I have no idea what the hell was going on.
 
+## Note: Fully detail explainations are sitting inside the pull request called 'Config Explainations' in order to leave the conf files usable as is
+
 ### I just want to serve up a single static folder to Port 80
 
 ### I want to run a Node server on Port 80!
