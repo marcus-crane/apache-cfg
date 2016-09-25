@@ -20,6 +20,7 @@ The point of these is that they're all being served from one single IP address a
 | Multiple servers          | super-server-surprise.conf   |
 | A mix of static + servers | mixed-up-mayhem.conf         |
 | A mix but with SSL enabled| secure-me-up-scotty.conf     |
+| SSL while disabling http  | disable-dastardly-http.conf  |
 
 
 ### I just want to serve up a single static folder to Port 80
@@ -53,6 +54,12 @@ No prob, check out **mixed-up-mayhem.conf**
 ### Ok, friend. I'm ready for the big time. What does SSL (https://) look like
 
 Aww yeah. You're ready for **secure-me-up-scotty.conf**
+
+### So, I've got SSL (https://) set up but now I have two versions (http:// and https://)! How do I force/redirect to https:// only?
+
+We're at the home stretch (unless I've written more)
+
+You're after **disable-dastardly-http.conf**
 
 ### Got any more names?
 
