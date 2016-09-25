@@ -27,6 +27,10 @@ Check out **duplicate-static-disco.conf**
 
 No prob, check out **mixed-up-mayhem.conf**
 
+### Ok, friend. I'm ready for the big time. What does SSL (https://) look like
+
+Aww yeah. You're ready for **secure-me-up-scotty.conf**
+
 ### Got any more names?
 
 Nah
