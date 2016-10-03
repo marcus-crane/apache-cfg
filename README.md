@@ -2,7 +2,7 @@
 ### So you wanna run both Node applications and static files on Apache, huh?
 ##### It doesn't have to just be Node really. Anything works but I just happen to have used that with this.
 
-## Note: Fully detail explainations are sitting inside the pull request called 'Config Explainations' in order to leave the conf files usable as is
+### EDIT: I was going to do detailed explainations in the pull request but I've decided (at some point), a gitbook would be more suitable. I've got the basic layout up [here](https://github.com/marcus-crane/server-cfg)
 
 I can't say this is best practice (since I have no idea what that even is, but here's how I was doing it until very recently (like, today because I'm gonna try out nginx next)
 
